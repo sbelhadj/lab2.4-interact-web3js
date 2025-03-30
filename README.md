@@ -59,9 +59,7 @@ Installer les dépendances en utilisant npm :
   
 ```bash  
 cd lab-web3-ethers-comparison
-
 npm install
-
 ```
 
 1.  Vérifier la configuration de Hardhat :  
@@ -73,9 +71,7 @@ npm install
     
 
 ```javascript  
-require('@nomiclabs/hardhat-ethers');
-
-  
+require('@nomiclabs/hardhat-ethers');  
 
 module.exports = {
 
@@ -94,15 +90,11 @@ accounts: [`0x${YOUR_PRIVATE_KEY}`],
 },
 
 };
-
 ```
 
-2.  Vérification de la configuration Metamask :  
-      
+2.  Vérification de la configuration Metamask :     
     
-
--   Assurez-vous que Metamask est connecté au testnet Sepolia avec un solde suffisant pour déployer un contrat.  
-      
+-   Assurez-vous que Metamask est connecté au testnet Sepolia avec un solde suffisant pour déployer un contrat.       
     
 
 ----------
@@ -193,7 +185,6 @@ balances[msg.sender] -= amount;
 }
 
 }
-
 ```
 
 ----------
@@ -205,7 +196,6 @@ balances[msg.sender] -= amount;
     
 
 ```javascript
-
 async function main() {
 
 const [deployer] = await ethers.getSigners();
@@ -235,7 +225,6 @@ console.error(error);
 process.exit(1);
 
 });
-
 ```
 
   
@@ -244,7 +233,6 @@ Exécuter le script de déploiement :
   
 ```bash  
 npx hardhat run scripts/deploy.js --network sepolia
-
 ```
 
 2.  Cela déploiera le contrat sur le testnet Sepolia et vous donnera l'adresse du contrat déployé.  
@@ -260,7 +248,6 @@ npx hardhat run scripts/deploy.js --network sepolia
     
 
 ```javascript
-
 async function main() {
 
 const [deployer] = await ethers.getSigners();
@@ -316,14 +303,12 @@ console.error(error);
 process.exit(1);
 
 });
-
-  
+```
 
 Exécuter le script Ethers.js :  
   
 ```bash  
 npx hardhat run scripts/interact-ethers.js --network sepolia
-
 ```
 
 ----------
@@ -341,7 +326,6 @@ const Web3 = require('web3');
 const { abi } = require('../artifacts/contracts/InstantPaymentHub.sol/InstantPaymentHub.json'); // L'ABI du contrat
 
   
-
 async function main() {
 
 const web3 = new Web3('https://sepolia.infura.io/v3/YOUR_INFURA_KEY'); // Connectez-vous à Sepolia via Infura
@@ -381,7 +365,6 @@ await contract.methods.withdraw(web3.utils.toWei('0.2', 'ether')).send({ from: a
 console.log("0.2 Ether retiré du contrat");
 
 }
-
   
 
 main()
@@ -404,7 +387,6 @@ Exécuter le script Web3.js :
   
 ```bash  
 node scripts/interact-web3.js
-
 ```
 
 ----------
@@ -434,9 +416,7 @@ node scripts/interact-web3.js
 
 Voici un aperçu des fichiers et dossiers dans le repo pour ce lab :
 
-```lua
-
-  
+```lua  
 
 lab-web3-ethers-comparison/
 
